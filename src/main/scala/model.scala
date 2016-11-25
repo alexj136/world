@@ -41,7 +41,7 @@ class Grid ( initialSize: Int ) {
   def aliveNeighbors ( row: Int, col: Int ): Int =
     ( Grid.neighborCoords ( row , col ) filter {
       case ( r, c ) =>
-        r > 0 && r < size - 1 && c > 0 && c < size - 1 && get ( r, c ).isOn
+        r >= 0 && r < size && c >= 0 && c < size && get ( r, c ).isOn
     } ).length
 
   def update: Unit = {
