@@ -14,7 +14,6 @@ import javax.swing.JFrame
 import javax.swing.JPanel
 import javax.swing.JLabel
 import javax.swing.JButton
-import javax.swing.JScrollPane
 
 import java.awt.Color
 import java.awt.GridLayout
@@ -70,7 +69,7 @@ object UI extends JFrame {
     }
     gridPanel setPreferredSize (
       new Dimension ( game.rows * 20, game.cols * 20 ) )
-    rootPanel add ( new JScrollPane ( gridPanel ), BorderLayout.CENTER )
+    rootPanel add ( gridPanel, BorderLayout.CENTER )
     revalidate
   }
 
