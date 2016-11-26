@@ -39,6 +39,9 @@ class Grid ( initialSize: Int ) {
 
   def unset ( row: Int, col: Int ): Unit = put ( row, col, Cell.dead )
 
+  def toggle ( row: Int, col: Int ): Unit = put ( row, col,
+    if ( get ( row, col ).isOn ) Cell.dead else Cell.alive )
+
   def aliveNeighbors ( row: Int, col: Int ): Int =
     ( Grid.neighborCoords ( row , col ) filter {
       case ( r, c ) =>
